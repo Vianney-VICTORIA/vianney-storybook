@@ -1,0 +1,43 @@
+import { Meta, Story, Props } from '@storybook/addon-docs/blocks';
+import  BaseButton  from './BaseButton.vue';
+
+<Story id="basebutton--default" />
+
+<Meta title='Base Button' />
+
+## Usage
+
+```vue
+import BaseButton from './BaseButton.vue';
+
+<base-layout>
+  <base-button 
+    :disabled="disabled"
+    :size="small"
+    :fluid="true"
+    :color="interactiveBlue"
+    :type="button"
+    @click="onClickMethod"
+  >
+  Discover
+  </base-button>  
+</base-layout>
+
+```
+
+
+## Description
+
+A short Description 
+
+
+## Properties
+
+Table of the props
+
+
+## HTML code
+
+```html
+<button type="button" class="a-BaseButton a-BaseButton--Small a-BaseButton--Fluid a-BaseButton--InteractiveBlue js-ClickMethod" type="button">Click Me!</button>
+```

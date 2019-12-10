@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- 7
+install:
+- nvm install 10.11
+- npm ci
+script:
+- npm run lint
+- npm run test:unit
+- npm run build-storybook
+deploy:
+  provider: s3
+  access_key_id: AKIAJ6ENFBD5DOJXMCWA
+  secret_access_key:
+    secure: "G+x/NMBxbbED6ps8D0GgHr8pNlmCpo1uVhzWIBptIyVqwhf+vH1fp6OC2cN4vw2gExbnZej+7mrPrPLeSKZRdZZQFD49Y5m/4RkK/WpWVgX6rG2ZwdO7DcIdvNX9ghKVuhCJ1u0dYrQ109eprVlyIT1lTw6ZEpERLfjHRfExdGX+cKcte+mAky7p1Goniouvm+tkRH8E9ky07Wnb+lCOvkl77dlo1lmruuNkAfakhOQ3kjpeumv4Vm7X/bmeIjcSs4hGDr7xmyheHFHTzzPB+BHyQNhmH+Jt45r9McukINC03VFc+P7B7txCSXa0Y4sijuu4QxLP1AqpF+q55I6nrEe+PimzC7JV58Q4gpWYjru2Sk/uLPm8HiTOZ4L+iKRjIlRV3NiiK3d5dT5nD+FBWpioS8+uGypyb3ayUHrc6bPnu6bl7tMgjOdT6uJhs5cCIwMK9nnRvNajSUNeI3T0rkBQT1QtMsFyKwgRbPHZud/LvOMhz1L87Xcmvbblj0wNGf91H337o8P42Ha1WWawfEfCOTBoGtu+Sfw5ukmhrzI+ks+mKBx/4ymqpJMMy4Oz5k6BApX8HaSTdjOm1x1OJaHYEZb5zYinB+QV9FmcqRnRmOCMVO2cXw6NOE77+LLSnDLQ9fkxTmRSYLncDtwvVzh1kc+6x7GyUyDBf8QLdjk="
+  bucket: pattern-library-serato-net
+  local-dir: storybook-static
+  skip_cleanup: true
+  cache_control: "max-age=31536000"
